@@ -13,7 +13,8 @@ namespace PartyCodding
                 BreastSize = 7,
                 FoodType = AnimalFoodType.Herbivorous,
                 Name = "Burenka",
-                Weight = 200
+                Weight = 200,
+                FlightPower = FlightPower.Magic
             };
             var wolf = new Wolf()
             {
@@ -26,28 +27,29 @@ namespace PartyCodding
             {
                 FoodType = AnimalFoodType.Ambivorous,
                 Weight = 170,
-                Name = "Dzhamshut"
+                Name = "Dzhamshut",
+                FlightPower = FlightPower.Wings
             };
-            var animals = new List<Animal>() { cow, wolf, pegasik };
-            foreach (var zver in animals)
+            //var animals = new List<Animal>() { cow, wolf, pegasik };
+            //foreach (var zver in animals)
+            //{
+            //    Console.WriteLine(zver.StoryAboutYourself());
+            //    cow = zver as Cow;
+            //    if (cow != null)
+            //    {
+            //        Console.WriteLine(cow.BreastSize);
+            //    }
+
+            //    if (zver is IFlyable)
+            //    {
+            //        ((IFlyable)zver).Fly();
+            //    }
+            //}
+            var flyers = new List<IFlyable>() { cow, pegasik };
+            foreach (var flyer in flyers)
             {
-                Console.WriteLine(zver.StoryAboutYourself());
-                //if(zver is Cow)
-                //{
-                //    Console.WriteLine("Mooo");
-                //}
-                cow = zver as Cow;
-                if (cow != null)
-                {
-                    Console.WriteLine(cow.BreastSize);
-                }
-
-                if (zver is IFlyable)
-                {
-                    ((IFlyable)zver).Fly();
-                }
+                flyer.Fly();
             }
-
         }
         
     }

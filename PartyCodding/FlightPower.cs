@@ -4,9 +4,10 @@ using System.Text;
 
 namespace PartyCodding
 {
-    public interface IFlyable
+    public enum FlightPower
     {
-        void Fly();
-        FlightPower FlightPower { get; set; }
+        Wings,
+        Engine,
+        Magic
     }
 }

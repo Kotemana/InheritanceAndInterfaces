@@ -6,9 +6,11 @@ namespace PartyCodding
 {
     public class Pegasus : Animal, IFlyable
     {
+        public FlightPower FlightPower { get ; set; }
+
         public void Fly()
         {
-            Console.WriteLine("I'm pegasus. I can fly and can have 1 rider on my back");
+            Console.WriteLine($"I'm pegasus. I fly using {FlightPower} I can fly and can have 1 rider on my back");
         }
 
         public override string StoryAboutYourself()
